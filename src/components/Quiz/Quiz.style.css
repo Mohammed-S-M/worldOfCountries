@@ -1,0 +1,345 @@
+/* Main quiz page */
+.quiz {
+  /* Showing the modal to be over the main page */
+  position: absolute;
+  z-index: 5;
+
+  /* Adjust the width and height of the modal */
+  width: 100%;
+  height: 100%;
+
+  /* Adjust the modal to be in the center of the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Quiz Modal */
+.quiz-modal {
+  /* Adjust the modal width and height */
+  width: 90%;
+  height: 95%;
+
+  /* Adjust items inside the modal to be in the center of the modal */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Setting the background linear-gradient, border radius, and box-shoadow */
+  background: linear-gradient(to right bottom, #919bff, #133a94);
+  border-radius: 0.5em;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
+
+  animation: moveInBottom 0.3s ease-out;
+}
+/**************************************/
+
+/* Quiz counter block */
+.quiz-counter {
+  width: 100%;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-counter p {
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+}
+/**************************************/
+
+/* Quiz img block */
+.quiz-img {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 0em;
+}
+
+.quiz-img img {
+  max-width: 90%;
+  min-width: 90%;
+  max-height: 90%;
+  border-radius: 0.5em;
+}
+/**************************************/
+
+/* Quiz choices block */
+.quiz-choices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-choices button {
+  min-width: 85%;
+  max-width: 85%;
+  margin: 0.2em 0.2em;
+
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 1em;
+
+  background: linear-gradient(to right bottom, #ebf4f5, #b5c6e0);
+
+  cursor: pointer;
+}
+/**************************************/
+
+/* Quiz (next and close) block */
+.quiz-modal-handle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-modal-handle button {
+  width: 30%;
+  margin: 1em 1em;
+
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  font-weight: 700;
+
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5em;
+
+  cursor: pointer;
+}
+/**************************************/
+
+/* Correct and inCorrect styling */
+.quiz-choices .correct {
+  background: linear-gradient(to right bottom, #82f4b1, #30c67c);
+}
+
+.quiz-choices .in-correct {
+  background: linear-gradient(to right bottom, #f83d5c, #fd4b2f);
+}
+
+.correct:disabled,
+.in-correct:disabled {
+  color: #000;
+}
+/**************************************/
+
+/* Styling when ERROR occur */
+.error-quiz {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.error-modal {
+  width: 80%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background: linear-gradient(to right bottom, #ebf4f5, #b5c6e0);
+  border-radius: 1em;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
+
+  animation: moveInBottom 0.2s ease-out;
+}
+
+.error-modal h3 {
+  width: 80%;
+
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.error-modal button {
+  width: 30%;
+  margin-bottom: 0.5em;
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  font-weight: 700;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+/**************************************/
+
+/* FINISHED quiz */
+.finish-quiz {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.finish-modal {
+  width: 80%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background: linear-gradient(to right bottom, #ebf4f5, #b5c6e0);
+  border-radius: 1em;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
+
+  animation: moveInTop 0.5s ease-out;
+}
+
+.finish-modal h3 {
+  width: 80%;
+  margin: -0.5em 0;
+
+  font-family: "Amatic SC", cursive;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.finish-modal p {
+  width: 80%;
+
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.finish-modal button {
+  width: 30%;
+  margin-bottom: 0.5em;
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  font-weight: 700;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.finish-modal img {
+  width: 30%;
+  margin-bottom: 0.5em;
+}
+
+/**************************************/
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 389px) and (orientation: portrait) {
+  .quiz-counter p {
+    font-size: 1.5em;
+  }
+
+  .quiz-choices button {
+    margin: 0.3em;
+    font-size: 1.6em;
+  }
+
+  .quiz-modal-handle button {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 700px) and (orientation: portrait) {
+  .quiz-counter p {
+    font-size: 1.5em;
+  }
+
+  .quiz-choices button {
+    margin: 0.3em;
+    font-size: 1.6em;
+  }
+
+  .quiz-modal-handle button {
+    font-size: 1.3em;
+  }
+
+  .quiz-img img {
+    max-width: 60%;
+    min-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+  .quiz-counter p {
+    font-size: 2.5em;
+  }
+
+  .quiz-choices button {
+    margin: 0.3em;
+    font-size: 2.5em;
+  }
+
+  .quiz-modal-handle button {
+    font-size: 2em;
+  }
+
+  .quiz-img img {
+    max-width: 60%;
+    min-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .quiz-modal {
+    width: 40%;
+  }
+
+  .quiz-img img {
+    max-width: 50%;
+    min-width: 50%;
+  }
+
+  .finish-modal {
+    width: 25%;
+  }
+
+  .finish-modal img {
+    width: 25%;
+  }
+
+  .finish-modal button {
+    width: 15%;
+  }
+
+  .finish-modal button:hover {
+    box-shadow: 0 0.5em 0.5em -0.5em rgba(0, 0, 0, 1);
+    transform: translateY(-5px);
+    transition: all 0.2s;
+  }
+}

@@ -7,10 +7,12 @@ import "./App.css";
 // Importing Components
 import SearchBar from "./components/SearchBar/SearchBar.component";
 import CountryModal from "./components/CountryModal/CountryModal.component";
-import FlagsQuiz from "./components/FlagsQuiz/FlagsQuiz.component";
+import Quiz from "./components/Quiz/Quiz.component";
 
-// Importing React Hooks
+// Importing React Hooks components
 import { useState } from "react";
+
+// Importing Hooks (my hook) components
 import { useFetch } from "./hooks/useFetch";
 
 const App = () => {
@@ -19,13 +21,15 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
 
+  // Fetching for all data to collect country names
   const [url, setUrl] = useState("https://restcountries.com/v3.1/all");
   const { data } = useFetch(url);
 
-  let countryNames = [];
+  // Declaring an empty array to collect the country names
+  const countryNames = [];
   if (data !== null) {
-    data.forEach((data) => {
-      countryNames.push(data.name.common);
+    data.map((data) => {
+      return countryNames.push(data.name.common);
     });
   }
 
@@ -76,11 +80,9 @@ const App = () => {
       )}
 
       {showQuiz && (
-        <FlagsQuiz
-          handleCloseQuiz={handleCloseQuiz}
-          countryNames={countryNames}
-        />
+        <Quiz handleCloseQuiz={handleCloseQuiz} countryNames={countryNames} />
       )}
+
       <div className="nav_bar">
         <h1 className="header">World of Countries</h1>
       </div>

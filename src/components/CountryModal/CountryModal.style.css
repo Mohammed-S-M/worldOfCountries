@@ -14,6 +14,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  animation: moveInBottom 0.3s ease-out;
 }
 
 .country-modal img {
@@ -69,6 +71,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  animation: moveInBottom 0.3s ease-out;
 }
 
 .loading {
@@ -79,6 +83,7 @@
   animation: rotation 2s infinite linear;
 }
 
+/* Animation */
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -86,5 +91,75 @@
 
   to {
     transform: rotate(359deg);
+  }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 389px) and (orientation: portrait) {
+  .country-modal h3 {
+    font-size: 1.6em;
+  }
+
+  .country-modal p {
+    font-size: 1.3em;
+  }
+
+  .error {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 700px) and (orientation: portrait) {
+  .country-modal {
+    height: 90vh;
+  }
+
+  .country-modal h3 {
+    font-size: 2em;
+  }
+
+  .country-modal p {
+    font-size: 1.3em;
+  }
+
+  .country-modal img {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+  .country-modal {
+    height: 90vh;
+  }
+
+  .country-modal h3 {
+    font-size: 2.5em;
+  }
+
+  .country-modal p {
+    font-size: 1.8em;
+  }
+
+  .country-modal img {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .country-modal {
+    width: 40%;
+    margin: 1% 30%;
+  }
+
+  .country-modal h3 {
+    font-size: 2.5em;
+  }
+
+  .country-modal p {
+    font-size: 1.6em;
+  }
+
+  .country-modal img {
+    width: 50%;
   }
 }

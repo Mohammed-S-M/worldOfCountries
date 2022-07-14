@@ -15,6 +15,8 @@
   font-weight: 700;
   color: #fff;
   margin-top: 1em;
+
+  animation: moveInTop 1s ease-out;
 }
 
 .main-section {
@@ -29,6 +31,9 @@
 
 .logo {
   width: 50%;
+
+  animation: moveInRight 1s ease-out 0.3s;
+  animation-fill-mode: backwards;
 }
 
 .flags-quiz-btn {
@@ -43,13 +48,16 @@
   font-size: 2em;
   font-weight: 700;
   background-color: #fff;
-  border: 0.1em solid #8de9d5;
+  border: 0.1em solid #000;
   border-radius: 0.5em;
   transition: all 0.1s;
+  cursor: pointer;
+
+  animation: moveInBottom 1s ease-out 1.5s;
+  animation-fill-mode: backwards;
 }
 
-.close-modal,
-.next {
+.close-modal {
   width: 30%;
   margin-bottom: 0.5em;
   font-family: "Amatic SC", cursive;
@@ -59,4 +67,100 @@
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
+}
+
+/****************************************************************/
+
+/* Animation */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 700px) and (orientation: portrait) {
+  .close-modal {
+    font-size: 1.5em;
+  }
+
+  .logo {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+  .logo {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    font-size: 5em;
+    margin-bottom: 0.1em;
+  }
+
+  .logo {
+    width: 10%;
+  }
+
+  .quiz-btn {
+    width: 15%;
+  }
+
+  .quiz-btn:hover {
+    box-shadow: 0 0.5em 0.5em -0.5em rgba(0, 0, 0, 1);
+    transform: translateY(-5px);
+    transition: all 0.2s;
+  }
 }
