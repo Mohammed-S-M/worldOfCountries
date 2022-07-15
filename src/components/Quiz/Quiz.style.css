@@ -38,7 +38,6 @@
 /* Quiz counter block */
 .quiz-counter {
   width: 100%;
-  margin-top: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +59,8 @@
   justify-content: center;
   align-items: center;
 
-  margin-top: 0em;
+  margin: 0.5em 0;
+  margin-top: -2em;
 }
 
 .quiz-img img {
