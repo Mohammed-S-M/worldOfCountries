@@ -6,8 +6,6 @@
   margin-top: 5%;
   margin-left: 5%;
 
-  overflow-y: visible;
-
   background: linear-gradient(to right bottom, #919bff, #133a94);
   border-radius: 0.5em;
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
