@@ -54,7 +54,7 @@
 /* Quiz img block */
 .quiz-img {
   width: 100%;
-  height: 30%;
+  height: 25vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,7 +109,7 @@
 
 .quiz-modal-handle button {
   width: 30%;
-  margin: 1em 1em;
+  margin: 0.5em 0.5em;
 
   font-family: "Amatic SC", cursive;
   font-size: 2em;
