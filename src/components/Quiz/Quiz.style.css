@@ -6,7 +6,7 @@
 
   /* Adjust the width and height of the modal */
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   /* Adjust the modal to be in the center of the page */
   display: flex;
@@ -18,7 +18,7 @@
 .quiz-modal {
   /* Adjust the modal width and height */
   width: 90%;
-  height: 95%;
+  height: 95vh;
 
   /* Adjust items inside the modal to be in the center of the modal */
   display: flex;
@@ -141,7 +141,7 @@
 /* Styling when ERROR occur */
 .error-quiz {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -192,7 +192,7 @@
 /* FINISHED quiz */
 .finish-quiz {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   display: flex;
   justify-content: center;
